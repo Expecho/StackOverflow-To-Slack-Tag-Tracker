@@ -70,3 +70,6 @@ The configuration is defined in the index.js file:
 ***so_track_answer_acceptation***       
   Whether or not notifications about accepted answers are posted
 
+# And the credits go to
+
+The code is based on the [StackOverflow bot](https://github.com/ldez/stackoverflow-slack-bot) created by [Ldez](https://github.com/ldez)
