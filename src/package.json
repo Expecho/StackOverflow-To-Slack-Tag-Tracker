@@ -1,0 +1,15 @@
+{
+  "name": "so-tag-tracker",
+  "version": "1.0.0",
+  "description": "StackOverflow Tag Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Expecho",
+  "license": "MIT",
+  "dependencies": {
+    "html-entities": "^1.2.1",
+    "request": "^2.81.0"  
+  }
+}
