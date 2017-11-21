@@ -1,7 +1,11 @@
-# StackOverlow -> Slack Tag Tracker
-Azure Function based bot that create notificitations in a Slack channel about StackOverflow activity.
+# StackOverflow -> Slack Tag Tracker
+Azure Function that creates notificitations in a Slack channel about StackOverflow activity.
 
 ![Overview](media/slack.PNG?raw=true )
+
+# Getting up & running
+
+
 
 # Configuration
 
