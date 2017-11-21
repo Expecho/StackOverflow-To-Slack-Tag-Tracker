@@ -1,5 +1,5 @@
 # StackOverflow -> Slack Tag Tracker
-Azure Function that creates notificitations in a Slack channel about StackOverflow activity.
+Azure Function which creates notificitations in a Slack channel about StackOverflow activity.
 
 ![Overview](media/slack.PNG?raw=true )
 
