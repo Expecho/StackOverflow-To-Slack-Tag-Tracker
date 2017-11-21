@@ -5,7 +5,9 @@ Azure Function that creates notificitations in a Slack channel about StackOverfl
 
 # Getting up & running
 
-
+1. Create a new timer based Azure Function (for javascript). For instructions see [the docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function).
+2. Install the required node.js packages. Instructions can be found [here](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#node-version-and-package-management). The package.json file is in this repository.
+3. Replace the default javascript code with the code in this repository. Then change the configuration to your liking.
 
 # Configuration
 
