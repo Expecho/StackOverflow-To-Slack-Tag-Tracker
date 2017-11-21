@@ -27,7 +27,7 @@ The configuration is defined in the index.js file:
   The Slack bot emoji icon (can be blank)
 
 ***slackbot_token***       
-  The Slack token, see 
+  The Slack token, Create a Slack App and get a token. see [the docs](https://api.slack.com/slack-apps) 
 
 ***slackbot_channel***       
   The name or the id of the channel that the message are posted to (for example: '#stackoverflow')
