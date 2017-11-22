@@ -59,7 +59,7 @@ The configuration is defined in the index.js file:
   Whether or not notifications about new comments are posted
 
 ***so_track_question_revisions***       
-  Whether or not notifications about modified questions
+  Whether or not notifications about modified questions are posted
 
 ***so_track_answer_revisions***       
   Whether or not notifications about modified answers are posted
