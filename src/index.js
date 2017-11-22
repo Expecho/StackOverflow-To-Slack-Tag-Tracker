@@ -24,7 +24,7 @@ module.exports = function (context, myTimer) {
     const lastTime = getLastTime();
 
     config.so_tracked_tags.split("|").forEach(function(tagset) {
-      const questionURL = `https://api.stackexchange.com/2.2/questions?key=${config.so_api_key}&order=desc&sort=activity&tagged=${tagset}&site=stackoverflow`;
+      const questionURL = `https://api.stackexchange.com/2.2/questions?key=${config.so_api_key}&order=desc&sort=activity&tagged=${encodeURIComponent(tagset)}&site=stackoverflow`;
       
       getJSON(questionURL, processQuestions, handleError, tagset);
     });
