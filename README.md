@@ -1,5 +1,5 @@
 # StackOverflow -> Slack Tag Tracker
-Azure Function that acts as a bot which creates notificitations in a Slack channel about StackOverflow activity based on the question tags.
+Azure Function that acts as a bot which creates notificitations in a [Slack](https://slack.com/) channel about [StackOverflow](https://stackoverflow.com/) activity based on the question tags.
 
 ![Overview](media/slack.PNG?raw=true )
 
@@ -7,7 +7,9 @@ Azure Function that acts as a bot which creates notificitations in a Slack chann
 
 1. Create a new timer based Azure Function (for javascript). For instructions see [the docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function).
 2. Install the required node.js packages. Instructions can be found [here](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#node-version-and-package-management). The package.json file is in this repository.
-3. Replace the default javascript code with the code in this repository. Then change the configuration to your liking.
+3. Replace the default javascript code with the code in this repository. Then change the configuration to your liking*
+
+* A Slack token can be generated [here](https://api.slack.com/apps). A StackOverflow token can be created [here](https://stackapps.com/apps/oauth/register).
 
 # Configuration
 
