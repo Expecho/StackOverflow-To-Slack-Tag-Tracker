@@ -4,11 +4,7 @@ const entities = require('html-entities').AllHtmlEntities;
 
 module.exports = function (context, myTimer) {
   const config = {
-        slackbot_username: "StackOverflow Tag Tracker",
-        slackbot_icon_emoji: ':incoming_envelope:',
-        slackbot_token: '<your_token>',
-        slackbot_channel: '<slack channel name or id>',
-        slackbot_workspace: '<slack workspace name>',
+        teams_webhook_url: "https://outlook.office.com/webhook/88b6bcb7-8d52-4d83-877c-e72b1250456d@5d324cf4-5d8c-4b4f-8e15-3b6026f4518c/IncomingWebhook/aaedbdca491449549f4c5e59650cf40b/7f4b9854-9abb-46cf-9a53-60fa2842dce9",
         so_api_key: '<stack overflow api key>',
         so_tracked_tags: 'azure|asp.net-web-api;owin',
         so_track_comments: false,
@@ -50,7 +46,7 @@ function handleError(err, response, body) {
     context.log(response);
 }
 
-function sendToSlack(soActivities, tagset) {
+function sendToTeams(soActivities, tagset) {
     if (Object.keys(soActivities).length) {
       var actions = Object.keys(soActivities)
         .map(key => soActivities[key])
@@ -70,7 +66,7 @@ function sendToSlack(soActivities, tagset) {
       };
 
       request.post({
-            url: `https://${config.slackbot_workspace}.slack.com/api/chat.postMessage?key=${config.so_api_key}`,
+            url: `${config.teams_webhook_url}`,
             form: payload
           },
           function(error, response, body) {
@@ -167,18 +163,18 @@ function sendToSlack(soActivities, tagset) {
         const soActivity = soActivities[tl.question_id];
         switch (tl.timeline_type) {
           case 'question':
-            soActivity.actions.push(historyEvent(tl, 'asked this question.', ':question:'));
+            soActivity.actions.push(historyEvent(tl, 'asked this question.', 'teams_question'));
             break;
           case 'revision':
             if (tl.question_id == tl.post_id && config.so_track_question_revisions) {
-              soActivity.actions.push(historyEvent(tl, 'revised the question.', ':pencil:'));
+              soActivity.actions.push(historyEvent(tl, 'revised the question.', 'teams_edit'));
             } else if(config.so_track_answer_revisions) {
-              soActivity.actions.push(historyEvent(tl, 'revised an answer.', ':pencil:', getAnswerLink(tl.post_id)));
+              soActivity.actions.push(historyEvent(tl, 'revised an answer.', 'teams_edit', getAnswerLink(tl.post_id)));
             }
             break;
           case 'accepted_answer':
             if(config.so_track_answer_acceptation)
-              soActivity.actions.push(historyEvent(tl, 'answer was accepted.', ':+1:', getAnswerLink(tl.post_id)));
+              soActivity.actions.push(historyEvent(tl, 'answer was accepted.', 'teams_answered', getAnswerLink(tl.post_id)));
             break;
           case 'answer':
             if(config.so_track_answers) {
@@ -188,7 +184,7 @@ function sendToSlack(soActivities, tagset) {
             break;
           case 'comment':
             if(config.so_track_comments)
-              soActivity.actions.push(historyEvent(tl, 'made a comment.', ':speech_balloon:', getCommentLink(tl.question_id, tl.post_id, tl.comment_id)));
+              soActivity.actions.push(historyEvent(tl, 'made a comment.', 'teams_comment', getCommentLink(tl.question_id, tl.post_id, tl.comment_id)));
             break;
           case 'unaccepted_answer':
           case 'post_state_changed':
@@ -202,7 +198,7 @@ function sendToSlack(soActivities, tagset) {
     if (Object.keys(checkQuestions).length > 0) {
       processAnswers(soActivities, checkQuestions, tagset)
     } else {
-      sendToSlack(soActivities, tagset);
+      sendToTeams(soActivities, tagset);
     }
   }
 
@@ -217,11 +213,11 @@ function sendToSlack(soActivities, tagset) {
       .forEach(function(answer) {
         const soActivity = soActivities[answer.question_id];
         if (checkQuestions[answer.question_id].indexOf(answer.creation_date) > -1) {
-          soActivity.actions.push(historyEvent(answer, 'posted an answer.', ':left_speech_bubble:', getAnswerLink(answer.answer_id)));
+          soActivity.actions.push(historyEvent(answer, 'posted an answer.', 'teams_answered', getAnswerLink(answer.answer_id)));
         }
       });
 
-    sendToSlack(soActivities, tagset);
+    sendToTeams(soActivities, tagset);
   }
 
   function makeSlackMessage(soActivities, tagset) {

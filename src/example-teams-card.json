@@ -1,0 +1,116 @@
+{
+	"$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+	"type": "AdaptiveCard",
+	"version": "1.0",
+	"body": [
+		{
+			"type": "ColumnSet",
+			"columns": [
+				{
+					"width": "32px",
+					"items": [
+						{
+							"type": "Image",
+							"width": "16px",
+							"horizontalAlignment": "center",
+							"url": "https://messagecardplayground.azurewebsites.net/assets/trello-logo.png"
+						}
+					]
+				},
+				{
+					"width": "stretch",
+					"items": [
+						{
+							"type": "TextBlock",
+							"text": "New actions on the **azure** tag"
+						}
+					]
+				},
+				{
+					"width": "auto",
+					"verticalContentAlignment": "center",
+					"items": [
+						{
+							"type": "Image",
+							"width": "12px",
+							"url": "https://messagecardplayground.azurewebsites.net/assets/Close.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "ColumnSet",
+			"spacing": "large",
+			"separator": true,
+			"columns": [
+				{
+					"width": "32px",
+					"items": [
+						{
+							"type": "Image",
+							"width": "32px",
+							"style": "person",
+							"horizontalAlignment": "center",
+							"url": "https://messagecardplayground.azurewebsites.net/assets/person_m2.png"
+						}
+					]
+				},
+				{
+					"width": "stretch",
+					"items": [
+						{
+							"type": "TextBlock",
+							"spacing": "none",
+							"isSubtle": true,
+							"text": "[Why is this?]()"
+						},
+						{
+							"type": "TextBlock",
+							"spacing": "small",
+							"isSubtle": true,
+							"text": "Asked by Peter at 12/12/2017 15:34"
+						}
+					]
+				}
+			]
+		},
+        {
+            "type": "ColumnSet",
+            "spacing": "large",
+            "separator": true,
+            "columns": [
+                {
+                    "width": "32px",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "width": "32px",
+                            "style": "person",
+                            "horizontalAlignment": "center",
+                            "url": "https://messagecardplayground.azurewebsites.net/assets/person_m2.png"
+                        }
+                    ]
+                },
+                {
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "spacing": "none",
+                            "isSubtle": true,
+                            "text": "[Why is this?]()"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "spacing": "small",
+                            "isSubtle": true,
+                            "text": "Asked by Peter at 12/12/2017 15:34"
+                        }
+                    ]
+                }
+            ]
+        }
+		
+	]
+}
