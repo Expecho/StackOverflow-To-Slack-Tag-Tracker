@@ -70,7 +70,7 @@ function sendToSlack(soActivities, tagset) {
       };
 
       request.post({
-            url: `https://${config.slackbot_workspace}.slack.com/api/chat.postMessage?key=${config.so_api_key}`,
+            url: `https://${config.slackbot_workspace}.slack.com/api/chat.postMessage`,
             form: payload
           },
           function(error, response, body) {
