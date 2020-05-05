@@ -5,7 +5,7 @@ Azure Function that acts as a bot which creates notifications in a [Slack](https
 
 # Getting up & running
 
-1. Create a new timer based Azure Function (for javascript). For instructions see [the docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function).
+1. Create a new timer based Azure Function (for javascript). For instructions see [the docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function). I recommend a timer that will fire every 15 minutes, due to the api request limitations of Stack Overflow.
 2. Install the required node.js packages. Instructions can be found [here](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#node-version-and-package-management). The package.json file is in this repository.
 3. Replace the default javascript code with the code in this repository. Then change the configuration to your liking*
 
