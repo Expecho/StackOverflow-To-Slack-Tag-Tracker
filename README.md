@@ -13,7 +13,7 @@ Azure Function that acts as a bot which creates notifications in a [Slack](https
 
 # Configuration
 
-The configuration is defined in the index.js file:
+The configuration is defined using environment variables:
 
         slackbot_username: "StackOverflow Tag Tracker",
         slackbot_icon_emoji: ':incoming_envelope:',
@@ -22,11 +22,6 @@ The configuration is defined in the index.js file:
         slackbot_workspace: '<workspace>',
         so_api_key: '<api key>',
         so_tracked_tags: 'azure;asp.net-web-api|powerbi',
-        so_track_comments: false,
-        so_track_question_revisions: false,
-        so_track_answer_revisions: false, 
-        so_track_answers: true, 
-        so_track_answer_acceptation: false
         
 ***slackbot_username***       
   The bot account name
@@ -56,22 +51,3 @@ The configuration is defined in the index.js file:
   > 'azure;javascript': get notified about activities of questions tagged with azure *and* javascript
   >
   > 'azure|javascript;reactjs': get notified about activities of questions tagged with azure **or** javascript *and* reactjs
-  
-***so_track_comments***       
-  Whether or not notifications about new comments are posted
-
-***so_track_question_revisions***       
-  Whether or not notifications about modified questions are posted
-
-***so_track_answer_revisions***       
-  Whether or not notifications about modified answers are posted
-
-***so_track_answers***       
-  Whether or not notifications about new answers are posted
-
-***so_track_answer_acceptation***       
-  Whether or not notifications about accepted answers are posted
-
-# And the credits go to
-
-The code is based on the [StackOverflow bot](https://github.com/ldez/stackoverflow-slack-bot) created by [Ldez](https://github.com/ldez)
