@@ -1,3 +1,6 @@
+.vs
+test*
+
 # Logs
 logs
 *.log
