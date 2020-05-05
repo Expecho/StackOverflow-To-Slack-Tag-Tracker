@@ -1,5 +1,5 @@
 # StackOverflow -> Slack Tag Tracker
-Azure Function that acts as a bot which creates notificitations in a [Slack](https://slack.com/) channel about [StackOverflow](https://stackoverflow.com/) activity based on the question tags.
+Azure Function that acts as a bot which creates notifications in a [Slack](https://slack.com/) channel about [StackOverflow](https://stackoverflow.com/) activity based on the question tags.
 
 ![Overview](media/slack.PNG?raw=true )
 
